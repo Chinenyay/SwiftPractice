@@ -143,7 +143,7 @@ print(total)
 
 
 //Functions and Closures
-// Use func to declare a function. Call a function by following its name with a list of arguments in parantheses. Use -> to separate the parameter names and tyoes from the function's return type.
+// Use func to declare a function. Call a function by following its name with a list of arguments in parantheses. Use -> to separate the parameter names and types from the function's return type.
 
 func greet(person: String, lunch: String) -> String {
     return "Hello \(person), we're having \(lunch) for lunch today."
@@ -184,3 +184,89 @@ let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
 print(statistics.sum)
 
 // Using nested functions
+// These are used to organise code that's long or complex
+func returnFifteen() -> Int {
+    var y = 10
+    func add () {
+        y += 5
+    }
+    add()
+    return y
+}
+var my_func = returnFifteen()
+print(my_func)
+
+// Creating a function that returns another function as its value
+func makeIncrementer() -> ((Int) -> Int) {
+    func addOne(number: Int) -> Int {
+        return 1 + number
+    }
+    return addOne
+}
+
+var my_func_2 = makeIncrementer()
+print(my_func_2(7))
+
+// Creating a function that takes another function as one of its arguments
+
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+var numbers = [20, 19, 7, 12]
+var func_1 = hasAnyMatches(list: numbers, condition: lessThanTen)
+print(func_1)
+
+// functions are a special kind of closures (blocks of code that can be called later). Write a closure without a name by surrounding code with braces ({}). Use in to separate the arguments and return type from the body.
+
+ numbers.map({ (number:Int) -> Int in
+    let result = 3 * number
+    return result
+    })
+
+func printer(number: Int){
+    print(number * 2)
+}
+
+numbers.map(printer)
+
+func printString(val: String){
+    print(val)
+}
+
+var string_arr = ["John", "Jennifer", "Ayoola"]
+
+string_arr.map(printString)
+
+string_arr.map({
+    (val: String) in
+    print(val)
+})
+
+var a1 = string_arr.map({
+    (val: String) -> Int in
+    let length = val.count
+    
+    return length
+})
+
+print(a1)
+
+var mappedNumbers = numbers.map({ number in 3 * number})
+print(mappedNumbers)
+
+// OBJECTS AND CLASSES
+// writing a class
+class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -> String {
+        return "A shape with \(numberOfSides) sides."
+    }
+}
