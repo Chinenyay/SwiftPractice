@@ -270,3 +270,85 @@ class Shape {
         return "A shape with \(numberOfSides) sides."
     }
 }
+
+
+// Defining structures and classes
+/*struct Resolution {
+    var width = 0
+    var height = 0
+}
+class VideoMode {
+    var resolution = Resolution()
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+} */
+
+class Beverage {
+    var category: String
+    init (category: String) {
+        self.category = category
+    }
+}
+
+class HotDrink: Beverage {
+    var pairing:String
+    
+    init (category:String, pairing:String) {
+        self.pairing = pairing
+        super.init(category: category)
+    }
+}
+
+class ColdDrink: Beverage {
+    var vessel: String
+    
+    init (category:String, vessel:String) {
+        self.vessel = vessel
+        super.init(category:category)
+    }
+}
+
+var drinkChoices = [
+    HotDrink(category: "coffee", pairing: "biscotti"),
+    HotDrink(category: "tea", pairing: "crumpets"),
+    ColdDrink(category: "lemonade", vessel: "glass")]
+
+//Generic Drink Offer
+for beverage in drinkChoices {
+    print("Can I get you a \(beverage.category)")
+}
+
+//Specific Drink Offer
+for beverage in drinkChoices {
+    if let coldDrink = beverage as? ColdDrink {
+        print("Can I offer you a \(coldDrink.vessel) of \(coldDrink.category)?")
+    } else if let hotDrink = beverage as? HotDrink {
+        print("Can I offer you a \(hotDrink.category) with \(hotDrink.pairing)?")
+    }
+    
+}
+
+
+var JennifersAcct = BankAccount(customerName:"Jennifer Chinenye Umoke", initialDeposit:7553.00, currency:"GBP")
+
+print(" Customer \(JennifersAcct.customerName) has a balance of \(JennifersAcct.currentBalance) \(JennifersAcct.currency).")
+
+var JohnsAcct = BankAccount(customerName:"John Ishola Olafenwa", initialDeposit:7234.00, currency:"USD")
+
+print ("\(JohnsAcct.customerName) has a balance of \(JohnsAcct.currentBalance) \(JohnsAcct.currency).")
+
+var moneyToBeSent:Float = 300.00
+JohnsAcct.withdraw(amount:moneyToBeSent)
+JennifersAcct.deposit(amount:moneyToBeSent)
+
+print("Hello, \(JohnsAcct.customerName) your current balance is \(JohnsAcct.currentBalance).")
+
+print("Hello, \(JennifersAcct.customerName) your current balance is \(JennifersAcct.currentBalance).")
+
+
+// creating a Plus Account
+
+var AyoolaAcct = PlusAccount(customerName:"Ayoola Olafenwa", initialDeposit:5500, currency:"GBP", loanBalance:200)
+
+print ("\(AyoolaAcct.customerName)'s current balance is \(AyoolaAcct.currentBalance) \(AyoolaAcct.currency) and her loan balance is \(AyoolaAcct.loanBalance) \(AyoolaAcct.currency).")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D018D389297C8D50009FCFEF /* BankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D018D388297C8D50009FCFEF /* BankingApp.swift */; };
 		D0298A4D2972A84700C586EE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0298A4C2972A84700C586EE /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D018D388297C8D50009FCFEF /* BankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingApp.swift; sourceTree = "<group>"; };
 		D0298A492972A84700C586EE /* SwiftPractice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftPractice; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0298A4C2972A84700C586EE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +59,7 @@
 		D0298A4B2972A84700C586EE /* SwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				D018D388297C8D50009FCFEF /* BankingApp.swift */,
 				D0298A4C2972A84700C586EE /* main.swift */,
 			);
 			path = SwiftPractice;
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D018D389297C8D50009FCFEF /* BankingApp.swift in Sources */,
 				D0298A4D2972A84700C586EE /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
